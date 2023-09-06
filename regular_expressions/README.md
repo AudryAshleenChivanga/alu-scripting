@@ -1,0 +1,1 @@
+Regex, short for Regular Expression, is a powerful tool used for pattern matching and searching within text strings. It provides a way to define patterns that can be used to match, extract, or manipulate specific parts of a text based on a set of rules.
