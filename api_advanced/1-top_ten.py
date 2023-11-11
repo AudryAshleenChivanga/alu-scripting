@@ -1,18 +1,21 @@
 #!/usr/bin/python3
-"""Modulefortop_tenfunction"""
+"""
+Returntop10postsofasubreddit.
+"""
+
+importjson
 importrequests
 
 
 deftop_ten(subreddit):
-"""FunctionthatqueriestheRedditAPI."""
-url="https://www.reddit.com/r/{}/hot.json?limit=10"\
-.format(subreddit)
-headers={'User-Agent':'MyUserAgent1.0'}
+url='https://www.reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
+headers={'User-Agent':'Mozilla/5.0'}
 response=requests.get(url,headers=headers)
 
 ifresponse.status_code==200:
-data=response.json().get('data').get('children')
-forpostindata:
-print(post.get('data').get('title'))
+data=json.loads(response.text)
+forpostindata['data']['children']:
+title=post['data']['title']
+print(title)
 else:
 print(None)
